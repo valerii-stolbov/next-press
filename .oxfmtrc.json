@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "ignorePatterns": ["pnpm-lock.yaml", "*.html"],
+  "printWidth": 120,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": ["*.css"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}

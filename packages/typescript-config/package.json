@@ -1,0 +1,13 @@
+{
+  "name": "@next-press/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./base": "./configs/base.json",
+    "./next": "./configs/next.json",
+    "./react": "./configs/react.json"
+  },
+  "peerDependencies": {
+    "typescript": "^6"
+  }
+}

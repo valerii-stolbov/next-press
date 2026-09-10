@@ -1,0 +1,14 @@
+{
+  "name": "@next-press/oxlint-config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./base": "./configs/base.js",
+    "./next": "./configs/next.js",
+    "./react": "./configs/react.js"
+  },
+  "peerDependencies": {
+    "oxlint": "^1"
+  }
+}

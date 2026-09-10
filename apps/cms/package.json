@@ -1,0 +1,32 @@
+{
+  "name": "cms",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3030",
+    "build": "next build",
+    "start": "next start",
+    "check-types": "next typegen && tsc --noEmit",
+    "lint": "oxlint .",
+    "clean": "node --input-type=module -e \"import { rmSync } from 'node:fs'; for (const path of ['.next', 'tsconfig.tsbuildinfo']) rmSync(path, { recursive: true, force: true })\"",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
+  },
+  "dependencies": {
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "@next-press/oxlint-config": "workspace:*",
+    "@next-press/tailwind-config": "workspace:*",
+    "@next-press/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "typescript": "catalog:"
+  }
+}
