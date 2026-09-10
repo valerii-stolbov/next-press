@@ -61,23 +61,22 @@ pnpm dev:cms  # http://localhost:3030
 
 Run these commands from the repository root.
 
-| Command                | Purpose                                                       |
-| ---------------------- | ------------------------------------------------------------- |
-| `pnpm dev`             | Start all development servers                                 |
-| `pnpm dev:web`         | Start only `web`                                              |
-| `pnpm dev:cms`         | Start only `cms`                                              |
-| `pnpm build`           | Build all applications                                        |
-| `pnpm build:web`       | Build only `web`                                              |
-| `pnpm build:cms`       | Build only `cms`                                              |
-| `pnpm check-types`     | Type-check all workspaces that define the task                |
-| `pnpm check-types:web` | Type-check only `web`                                         |
-| `pnpm check-types:cms` | Type-check only `cms`                                         |
-| `pnpm lint`            | Lint all workspaces that define the task                      |
-| `pnpm lint:web`        | Lint only `web`                                               |
-| `pnpm lint:cms`        | Lint only `cms`                                               |
-| `pnpm fmt`             | Format the repository with Oxfmt                              |
-| `pnpm fmt:check`       | Check formatting without changing files                       |
-| `pnpm clean`           | Remove generated application build and TypeScript cache files |
+| Command                | Purpose                                        |
+| ---------------------- | ---------------------------------------------- |
+| `pnpm dev`             | Start all development servers                  |
+| `pnpm dev:web`         | Start only `web`                               |
+| `pnpm dev:cms`         | Start only `cms`                               |
+| `pnpm build`           | Build all applications                         |
+| `pnpm build:web`       | Build only `web`                               |
+| `pnpm build:cms`       | Build only `cms`                               |
+| `pnpm check-types`     | Type-check all workspaces that define the task |
+| `pnpm check-types:web` | Type-check only `web`                          |
+| `pnpm check-types:cms` | Type-check only `cms`                          |
+| `pnpm lint`            | Lint all workspaces that define the task       |
+| `pnpm lint:web`        | Lint only `web`                                |
+| `pnpm lint:cms`        | Lint only `cms`                                |
+| `pnpm fmt`             | Format the repository with Oxfmt               |
+| `pnpm fmt:check`       | Check formatting without changing files        |
 
 Each application also provides a production `start` script; run it in that application's workspace after building it.
 
@@ -127,7 +126,7 @@ Keep reusable configuration in `packages` and product-specific code in the relev
 
 ## Extending the Monorepo
 
-New applications under `apps/*` and packages under `packages/*` are discovered automatically by the pnpm workspace. Give a new workspace a unique package name and only the scripts and dependencies it needs. If it participates in repository-wide `dev`, `build`, `check-types`, `lint`, or `clean` tasks, use the existing script names so Turborepo can include it.
+New applications under `apps/*` and packages under `packages/*` are discovered automatically by the pnpm workspace. Give a new workspace a unique package name and only the scripts and dependencies it needs. If it participates in repository-wide `dev`, `build`, `check-types`, or `lint` tasks, use the existing script names so Turborepo can include it.
 
 Create a shared package only when configuration or code is genuinely used by multiple workspaces. Consume internal packages with `workspace:*` and verify shared changes in every dependent app.
 

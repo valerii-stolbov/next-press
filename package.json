@@ -16,7 +16,6 @@
     "lint": "turbo run lint",
     "lint:cms": "turbo run lint --filter=cms",
     "lint:web": "turbo run lint --filter=web",
-    "clean": "turbo run clean",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check"
   },

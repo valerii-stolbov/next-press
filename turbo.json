@@ -16,9 +16,6 @@
     },
     "lint": {
       "dependsOn": []
-    },
-    "clean": {
-      "cache": false
     }
   }
 }

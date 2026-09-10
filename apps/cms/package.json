@@ -9,7 +9,6 @@
     "start": "next start",
     "check-types": "next typegen && tsc --noEmit",
     "lint": "oxlint .",
-    "clean": "node --input-type=module -e \"import { rmSync } from 'node:fs'; for (const path of ['.next', 'tsconfig.tsbuildinfo']) rmSync(path, { recursive: true, force: true })\"",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check"
   },

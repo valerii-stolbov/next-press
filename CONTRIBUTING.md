@@ -28,7 +28,7 @@ All directories immediately below `apps` and `packages` are pnpm workspaces. Tur
 3. Run `pnpm fmt:check`, `pnpm lint`, and `pnpm check-types`. The `:web` and `:cms` variants can provide a faster app-specific feedback loop.
 4. Run `pnpm build`, or the relevant `pnpm build:web` / `pnpm build:cms` command, when the change can affect the production build.
 
-Use `pnpm fmt` to apply repository formatting and `pnpm clean` to remove generated application build and TypeScript cache files.
+Use `pnpm fmt` to apply repository formatting.
 
 There is currently no automated test task. Do not document or depend on one unless test tooling is added to the workspace.
 
@@ -68,6 +68,6 @@ Internal packages use the `@next-press/*` scope and are referenced with `workspa
 
 1. Create the app under `apps/<name>` with a unique `name` in its `package.json`.
 2. Add only its required runtime and development dependencies. Reference internal configuration packages with `workspace:*` where applicable.
-3. Define the standard `dev`, `build`, `check-types`, `lint`, and `clean` scripts that the app supports. Turborepo will include matching scripts in repository-wide tasks automatically.
+3. Define the standard `dev`, `build`, `check-types`, and `lint` scripts that the app supports. Turborepo will include matching scripts in repository-wide tasks automatically.
 4. Add app-specific configuration, source files, static assets, and an `.env.example` if the app requires environment variables.
 5. Run the repository-wide lint, type-check, formatting, and build commands to verify the new workspace and its shared-package integration.
