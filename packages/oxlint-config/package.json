@@ -8,6 +8,9 @@
     "./next": "./configs/next.js",
     "./react": "./configs/react.js"
   },
+  "devDependencies": {
+    "oxlint": "catalog:"
+  },
   "peerDependencies": {
     "oxlint": "^1"
   }
