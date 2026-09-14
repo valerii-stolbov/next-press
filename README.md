@@ -12,7 +12,6 @@ apps/
   cms/                    CMS/admin application
 packages/
   oxlint-config/          Shared Oxlint rules
-  tailwind-config/        Shared Tailwind CSS and PostCSS setup
   typescript-config/      Shared TypeScript configurations
 ```
 
@@ -92,15 +91,17 @@ Each application also provides a production `start` script; run it in that appli
 
 Both apps configure Next.js with `output: 'standalone'` for a minimal self-hosted production bundle.
 
+## Styling
+
+Each application owns its Tailwind CSS setup. Its `postcss.config.ts` enables `@tailwindcss/postcss`, while
+`src/app/globals.css` imports Tailwind CSS and `tw-animate-css` and defines the application's theme tokens and base
+styles. Keeping these files inside each app allows the public site and admin interface to evolve independently.
+
 ## Shared Packages
 
 ### `@next-press/typescript-config`
 
 Provides `base`, `react`, and `next` TypeScript configurations. Both applications extend `@next-press/typescript-config/next` from their `tsconfig.json`. See [`packages/typescript-config/README.md`](packages/typescript-config/README.md).
-
-### `@next-press/tailwind-config`
-
-Exports the shared PostCSS configuration and a CSS entry point that imports Tailwind CSS and `tw-animate-css`. Each app re-exports the PostCSS config from its own `postcss.config.ts` and imports the shared styles from `src/app/globals.css`. See [`packages/tailwind-config/README.md`](packages/tailwind-config/README.md).
 
 ### `@next-press/oxlint-config`
 
@@ -119,7 +120,7 @@ After copying or using this repository as a template:
 1. Update the root package name and the `@next-press/*` package scope if the project should use its own naming.
 2. Replace the placeholder page content and metadata in each app's `src/app` directory.
 3. Replace the favicons and other files in each app's `public` directory.
-4. Adapt the colors, typography, and other site-specific styles in each app's `globals.css`.
+4. Adapt the colors, typography, and other site-specific styles in each app's `src/app/globals.css`.
 5. Add required environment variable names to the relevant `.env.example` files as integrations are introduced.
 
 Keep reusable configuration in `packages` and product-specific code in the relevant application.

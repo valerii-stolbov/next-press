@@ -19,13 +19,15 @@
   },
   "devDependencies": {
     "@next-press/oxlint-config": "workspace:*",
-    "@next-press/tailwind-config": "workspace:*",
     "@next-press/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "oxfmt": "catalog:",
     "oxlint": "catalog:",
+    "tailwindcss": "catalog:",
+    "tw-animate-css": "catalog:",
     "typescript": "catalog:"
   }
 }

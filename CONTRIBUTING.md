@@ -17,7 +17,7 @@ pnpm dev
 
 - `apps/web` contains the public Next.js application.
 - `apps/cms` contains the CMS/admin Next.js application.
-- `packages/*` contains shared Oxlint, Tailwind CSS, and TypeScript configuration.
+- `packages/*` contains shared Oxlint and TypeScript configuration.
 
 All directories immediately below `apps` and `packages` are pnpm workspaces. Turborepo coordinates common tasks across them.
 
@@ -42,6 +42,9 @@ There is currently no automated test task. Do not document or depend on one unle
 ## Working with Apps
 
 Public-site code belongs in `apps/web`; CMS/admin code belongs in `apps/cms`. Put routes and layouts in the app's `src/app` directory and static assets in its `public` directory.
+
+Tailwind CSS and PostCSS are configured per application. Keep theme tokens and application-specific base styles in
+that app's `src/app/globals.css` rather than extracting them prematurely.
 
 Add app-specific dependencies to the app that uses them rather than to the repository root. Workspace-targeted commands can be run with pnpm's filter syntax, for example:
 

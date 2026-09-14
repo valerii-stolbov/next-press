@@ -1,3 +1,7 @@
-import config from '@next-press/tailwind-config/postcss-config';
+const config = {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+};
 
 export default config;

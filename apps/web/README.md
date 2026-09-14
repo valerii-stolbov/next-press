@@ -30,10 +30,11 @@ pnpm --filter web start
 
 - `tsconfig.json` extends `@next-press/typescript-config/next` and defines `@/*` as an alias for `src/*`.
 - `oxlint.config.ts` extends `@next-press/oxlint-config/next`.
-- `postcss.config.ts` uses `@next-press/tailwind-config/postcss-config`.
-- `src/app/globals.css` imports `@next-press/tailwind-config/shared-styles` before app-specific theme and base styles.
+- `postcss.config.ts` enables the Tailwind CSS PostCSS plugin.
+- `src/app/globals.css` imports Tailwind CSS and `tw-animate-css`, then defines the app's theme and base styles.
 
-Application routes and layouts live in `src/app`; static assets live in `public`.
+Application routes, layouts, metadata, and the global stylesheet live in `src/app`; static assets such as browser
+favicons live in `public`.
 
 ## Environment Variables
 
