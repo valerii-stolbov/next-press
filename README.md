@@ -22,6 +22,7 @@ The workspace is defined by `pnpm-workspace.yaml`. Turborepo runs the applicatio
 - Next.js 16 and React 19
 - TypeScript 6
 - Tailwind CSS 4 with `tw-animate-css`
+- shadcn/Base UI components in the CMS application
 - Oxlint and Oxfmt
 - Turborepo 2
 - pnpm workspaces
@@ -87,7 +88,9 @@ Each application also provides a production `start` script; run it in that appli
 
 ### cms
 
-`apps/cms` is the starting point for a project's CMS/admin interface. It uses the same base stack as `web`, listens on port 3030 in development, and currently contains only a minimal placeholder page. See [`apps/cms/README.md`](apps/cms/README.md).
+`apps/cms` is the starting point for a project's CMS/admin interface. It listens on port 3030 in development and
+includes a source-owned shadcn component setup built on Base UI, with shared theme tokens and a `Button` component.
+It does not include a CMS backend or content model. See [`apps/cms/README.md`](apps/cms/README.md).
 
 Both apps configure Next.js with `output: 'standalone'` for a minimal self-hosted production bundle.
 
@@ -95,7 +98,8 @@ Both apps configure Next.js with `output: 'standalone'` for a minimal self-hoste
 
 Each application owns its Tailwind CSS setup. Its `postcss.config.ts` enables `@tailwindcss/postcss`, while
 `src/app/globals.css` imports Tailwind CSS and `tw-animate-css` and defines the application's theme tokens and base
-styles. Keeping these files inside each app allows the public site and admin interface to evolve independently.
+styles. The CMS stylesheet also imports the shadcn Tailwind layer and exposes light, dark, chart, and sidebar tokens.
+Keeping these files inside each app allows the public site and admin interface to evolve independently.
 
 ## Shared Packages
 

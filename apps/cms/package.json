@@ -13,6 +13,10 @@
     "fmt:check": "oxfmt --check"
   },
   "dependencies": {
+    "@base-ui/react": "^1.8.0",
+    "class-variance-authority": "^0.7.1",
+    "cn": "^0.3.0",
+    "lucide-react": "^1.45.0",
     "next": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
@@ -26,6 +30,7 @@
     "@types/react-dom": "catalog:",
     "oxfmt": "catalog:",
     "oxlint": "catalog:",
+    "shadcn": "^4.21.0",
     "tailwindcss": "catalog:",
     "tw-animate-css": "catalog:",
     "typescript": "catalog:"
