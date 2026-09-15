@@ -1,7 +1,7 @@
 # NextPress: CMS
 
 `cms` is the Next.js application reserved for a project's CMS/admin interface. The template provides a minimal App
-Router page, installable-app metadata, and a local, source-owned shadcn component setup built on Base UI. It does not include
+Router page, application metadata, and a local, source-owned shadcn component setup built on Base UI. It does not include
 a CMS backend, authentication, or content model.
 
 ## Development
@@ -36,8 +36,8 @@ pnpm --filter cms start
 - `src/app/globals.css` imports Tailwind CSS, `tw-animate-css`, and the shadcn Tailwind layer, then defines the app's
   light and dark theme tokens and base styles.
 
-Application routes, layouts, metadata, and the global stylesheet live in `src/app`; reusable UI components live in
-`src/components/ui`; shared helpers live in `src/lib`; static assets live in `public`.
+Application routes, layouts, metadata files, and the global stylesheet live in `src/app`; reusable UI components live
+in `src/components/ui`; shared helpers live in `src/lib`; other static assets live in `public`.
 
 Tailwind CSS, `@tailwindcss/postcss`, `tw-animate-css`, and the shadcn CLI are build-time tools and therefore live in
 this application's `devDependencies`. The Base UI primitive, variant, class-name, and icon packages used by generated
@@ -77,9 +77,9 @@ keep its custom components and styling in that application unless a real cross-a
 
 ## App Metadata
 
-`src/app/manifest.ts` exposes the web app manifest and references the Android icons in `public`. The root layout adds
-Apple web app settings, a white browser theme color, and favicon metadata. Replace the names, descriptions, colors,
-and icon files when adapting the template for a real project.
+`src/app/icon.png` provides the browser icon through the App Router metadata file convention. The root layout defines
+the application title and description, while reusable brand artwork lives in `public/images`. Replace these metadata
+values and image assets when adapting the template for a real project.
 
 ## Environment Variables
 

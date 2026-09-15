@@ -12,7 +12,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 - Read `README.md` in this directory before changing application structure or behavior.
 - This workspace is a starting shell for a CMS/admin interface. It currently has no CMS backend, authentication, authorization model, or content model; do not invent rules for them.
-- Keep routes, layouts, metadata, the web app manifest, and global styles under `src/app`; keep static assets under `public`.
+- Keep routes, layouts, metadata files, and global styles under `src/app`; keep other static assets under `public`.
 - shadcn is a local source generator configured by `components.json`. Commit generated UI to `src/components/ui` and adapt it there as application code.
 - Keep reusable CMS helpers in `src/lib`. Follow the aliases declared in `components.json` and `tsconfig.json` when generating or moving files.
 - Keep Tailwind imports, shadcn theme tokens, radii, and dark-mode values in `src/app/globals.css`; keep their build dependencies in this workspace.

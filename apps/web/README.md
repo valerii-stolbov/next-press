@@ -33,9 +33,6 @@ pnpm --filter web start
 - `postcss.config.ts` enables the Tailwind CSS PostCSS plugin.
 - `src/app/globals.css` imports Tailwind CSS and `tw-animate-css`, then defines the app's theme and base styles.
 
-Application routes, layouts, metadata, and the global stylesheet live in `src/app`; static assets such as browser
-favicons live in `public`.
-
 Tailwind CSS, its PostCSS plugin, and `tw-animate-css` are declared in this application's `devDependencies` because
 `src/app/globals.css` imports them during the build. The public application does not use the CMS shadcn configuration
 or its UI components.

@@ -128,7 +128,7 @@ After copying or using this repository as a template:
 
 1. Update the root package name and the `@next-press/*` package scope if the project should use its own naming.
 2. Replace the placeholder page content and metadata in each app's `src/app` directory.
-3. Replace the favicons and other files in each app's `public` directory.
+3. Replace each app's icon metadata files in `src/app` and its other static assets in `public`.
 4. Adapt the colors, typography, and other site-specific styles in each app's `src/app/globals.css`.
 5. Add required environment variable names to the relevant `.env.example` files as integrations are introduced.
 

@@ -14,10 +14,6 @@ export const metadata: Metadata = {
     default: 'NextPress: WEB',
   },
   description: 'Web site on NextPress',
-  icons: [
-    { url: '/favicon-16x16.png', rel: 'icon', type: 'image/png', sizes: '16x16' },
-    { url: '/favicon-32x32.png', rel: 'icon', type: 'image/png', sizes: '32x32' },
-  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
