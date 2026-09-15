@@ -11,8 +11,8 @@ apps/
   web/                    Public website
   cms/                    CMS/admin application
 packages/
-  oxlint-config/          Shared Oxlint rules
-  typescript-config/      Shared TypeScript configurations
+  oxlint-config/          Shared Oxlint configuration
+  typescript-config/      Shared TypeScript configuration
 ```
 
 The workspace is defined by `pnpm-workspace.yaml`. Turborepo runs the application tasks declared in `turbo.json`; configuration packages are consumed directly through pnpm's `workspace:*` protocol.
@@ -30,7 +30,7 @@ The workspace is defined by `pnpm-workspace.yaml`. Turborepo runs the applicatio
 ## Requirements
 
 - Node.js 24.20.0
-- pnpm 12.3.4
+- pnpm 12.4.2
 
 These versions are declared in the root `package.json` through `engines` and `devEngines`.
 
@@ -89,7 +89,7 @@ Each application also provides a production `start` script; run it in that appli
 ### cms
 
 `apps/cms` is the starting point for a project's CMS/admin interface. It listens on port 3030 in development and
-includes a source-owned shadcn component setup built on Base UI, with shared theme tokens and a `Button` component.
+includes a local shadcn component setup built on Base UI, with application theme tokens and a `Button` component.
 It does not include a CMS backend or content model. See [`apps/cms/README.md`](apps/cms/README.md).
 
 Both apps configure Next.js with `output: 'standalone'` for a minimal self-hosted production bundle.
@@ -100,6 +100,11 @@ Each application owns its Tailwind CSS setup. Its `postcss.config.ts` enables `@
 `src/app/globals.css` imports Tailwind CSS and `tw-animate-css` and defines the application's theme tokens and base
 styles. The CMS stylesheet also imports the shadcn Tailwind layer and exposes light, dark, chart, and sidebar tokens.
 Keeping these files inside each app allows the public site and admin interface to evolve independently.
+
+The repository intentionally has no shared UI package. shadcn is a development-time generator in `apps/cms`; its
+generated components are committed to `apps/cms/src/components/ui` and imported as ordinary application source.
+Tailwind CSS, its PostCSS plugin, `tw-animate-css`, and the shadcn Tailwind layer are resolved while building the app,
+so the corresponding packages are declared directly in the consuming application's `devDependencies`.
 
 ## Shared Packages
 

@@ -28,3 +28,6 @@ pnpm lint
 ```
 
 Use `pnpm lint:web` or `pnpm lint:cms` to check a single application.
+
+This package contains configuration only. Application lint dependencies and source code remain in their consuming
+workspaces.

@@ -36,6 +36,12 @@ pnpm --filter web start
 Application routes, layouts, metadata, and the global stylesheet live in `src/app`; static assets such as browser
 favicons live in `public`.
 
+Tailwind CSS, its PostCSS plugin, and `tw-animate-css` are declared in this application's `devDependencies` because
+`src/app/globals.css` imports them during the build. The public application does not use the CMS shadcn configuration
+or its UI components.
+
+The app uses `output: 'standalone'` in `next.config.ts` so production builds include a minimal self-hosted server bundle.
+
 ## Environment Variables
 
 The current source does not require environment variables. Add future variable names to `.env.example`, keep local values in the ignored `.env` file, and do not commit secrets.

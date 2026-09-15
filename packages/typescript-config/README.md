@@ -20,3 +20,6 @@ Both `apps/web` and `apps/cms` use the `next` configuration. A Next.js app conne
 ```
 
 Use `base` for non-React TypeScript workspaces and `react` for React projects that do not need Next.js settings. The consuming workspace must provide TypeScript 6, as declared by this package's peer dependency.
+
+This package contains compiler configuration only. Each application owns its path aliases, generated framework types,
+and TypeScript development dependency.

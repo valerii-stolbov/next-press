@@ -1,7 +1,7 @@
 # NextPress: CMS
 
 `cms` is the Next.js application reserved for a project's CMS/admin interface. The template provides a minimal App
-Router page, installable-app metadata, and a source-owned shadcn component setup built on Base UI. It does not include
+Router page, installable-app metadata, and a local, source-owned shadcn component setup built on Base UI. It does not include
 a CMS backend, authentication, or content model.
 
 ## Development
@@ -39,6 +39,10 @@ pnpm --filter cms start
 Application routes, layouts, metadata, and the global stylesheet live in `src/app`; reusable UI components live in
 `src/components/ui`; shared helpers live in `src/lib`; static assets live in `public`.
 
+Tailwind CSS, `@tailwindcss/postcss`, `tw-animate-css`, and the shadcn CLI are build-time tools and therefore live in
+this application's `devDependencies`. The Base UI primitive, variant, class-name, and icon packages used by generated
+components are runtime dependencies of the CMS itself.
+
 ## UI Components
 
 The shadcn configuration is stored in `components.json`. It uses the `base-nova` style, Base UI primitives, Lucide
@@ -67,6 +71,9 @@ import { Button } from '@/components/ui/button';
 Generated components are committed application source, so adapt their markup and variants in `src/components/ui`
 when the CMS design requires it. Keep shared colors, radii, and dark-mode values in `src/app/globals.css` rather than
 duplicating them in individual components. Dark mode is activated by a `.dark` class on an ancestor element.
+
+There is intentionally no shared shadcn package or configuration in the monorepo. If another application needs UI,
+keep its custom components and styling in that application unless a real cross-application component contract emerges.
 
 ## App Metadata
 

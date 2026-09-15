@@ -5,28 +5,28 @@
   "type": "module",
   "scripts": {
     "dev": "turbo run dev",
-    "dev:cms": "turbo run dev --filter=cms",
-    "dev:web": "turbo run dev --filter=web",
+    "dev:cms": "turbo run dev --filter cms",
+    "dev:web": "turbo run dev --filter web",
     "build": "turbo run build",
-    "build:cms": "turbo run build --filter=cms",
-    "build:web": "turbo run build --filter=web",
+    "build:cms": "turbo run build --filter cms",
+    "build:web": "turbo run build --filter web",
     "check-types": "turbo run check-types",
-    "check-types:cms": "turbo run check-types --filter=cms",
-    "check-types:web": "turbo run check-types --filter=web",
+    "check-types:cms": "turbo run check-types --filter cms",
+    "check-types:web": "turbo run check-types --filter web",
     "lint": "turbo run lint",
-    "lint:cms": "turbo run lint --filter=cms",
-    "lint:web": "turbo run lint --filter=web",
+    "lint:cms": "turbo run lint --filter cms",
+    "lint:web": "turbo run lint --filter web",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check"
   },
   "devDependencies": {
     "oxfmt": "catalog:",
-    "turbo": "^2.10.12"
+    "turbo": "^2.10.13"
   },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "12.3.4",
+      "version": "12.4.2",
       "onFail": "download"
     },
     "runtime": {
@@ -37,5 +37,6 @@
   },
   "engines": {
     "node": "24.20.0"
-  }
+  },
+  "packageManager": "pnpm@12.4.2"
 }

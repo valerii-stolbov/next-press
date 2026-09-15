@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-The repository requires Node.js 24.20.0 and pnpm 12.3.4, as declared in the root `package.json`.
+The repository requires Node.js 24.20.0 and pnpm 12.4.2, as declared in the root `package.json`.
 
 ```bash
 git clone <repository-url>
@@ -46,6 +46,10 @@ Public-site code belongs in `apps/web`; CMS/admin code belongs in `apps/cms`. Pu
 Tailwind CSS and PostCSS are configured per application. Keep theme tokens and application-specific base styles in
 that app's `src/app/globals.css` rather than extracting them prematurely.
 
+CMS UI components are source-owned by `apps/cms`. Generate them with the shadcn CLI and commit the resulting files to
+`apps/cms/src/components/ui`; do not introduce a shared component package until another workspace genuinely consumes
+the same maintained component implementation.
+
 Add app-specific dependencies to the app that uses them rather than to the repository root. Workspace-targeted commands can be run with pnpm's filter syntax, for example:
 
 ```bash
@@ -65,6 +69,8 @@ Internal packages use the `@next-press/*` scope and are referenced with `workspa
 - Add each dependency to the smallest workspace that needs it.
 - Keep application-only dependencies out of the root package unless a root-level tool requires them.
 - Use `devDependencies` for build, lint, formatting, and type tooling that is not needed at runtime.
+- Declare CSS build dependencies such as Tailwind CSS, its PostCSS plugin, and imported CSS packages in the app whose
+  stylesheet references them, even when they are only needed during development and production builds.
 - Keep versions aligned through the existing `catalog:` entries in `pnpm-workspace.yaml` when a dependency is intentionally shared across workspaces.
 
 ## Adding a New App
