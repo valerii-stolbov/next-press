@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "oxfmt": "catalog:",
-    "turbo": "^2.10.13"
+    "turbo": "^2.11.2"
   },
   "devEngines": {
     "packageManager": {
